@@ -1,0 +1,283 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onload="inot(evt)">
+  <script type="text/ecmascript" xlink:href="/jqml/src/jqmlns.js"></script>
+  <script type="text/ecmascript" xlink:href="mille.js"></script>
+  <script type="text/ecmascript" xlink:href="mbfunc1.js"></script>
+  <script type="text/ecmascript" xlink:href="mbui.js"></script>
+  <style>/*<![CDATA[*/
+	#b{fill:#8f8873}
+	#a path{fill:#a99c79}
+	#b,#a path{opacity:1;fill-opacity:1;fill-rule:nonzero;stroke:none}
+
+	text {font-size:14px;font-weight:bolder}
+	.hazard text {fill:#EF1F1D}
+	.remedy text {fill:#187534}
+	.safety text {fill:#4618C6}
+	.miles  text {fill:blue}
+	.k {fill:black}
+	.p {fill:rgb(24,117,52)}
+	.unseen, #hand1, #hand2, #hand3, #hand4, #hand5,
+;	#player2, #player3, #player4, #player5
+;		{opacity:0}
+;;	My Safeties
+	g.msgo	use.prgo,
+	g.msgo	use.punlimit,
+	g.msfuel	use.prfuel,
+	g.mstire	use.prtire,
+	g.mscrash	use.prcrash
+
+;;	Enemy Safeties
+	g.esgo	use.phgo,
+	g.esgo	use.plimit,
+	g.esfuel	use.phfuel,
+	g.estire	use.phtire,
+	g.escrash	use.phcrash
+
+;;	Grayout
+		{filter:url(#grayscale);}
+
+	
+  /*]]>*/</style>
+    <defs>
+      <filter id="grayscale"><feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0 0 0 1 0"/></filter>
+      <pattern id="felt" patternUnits="userSpaceOnUse" width="64" height="64">
+	<rect y="0" x="0" height="64" width="64" id="b" />
+	<g id="a">
+	 <path d="M 62.8125,0 L 43.25,19.5625 C 43.73109,19.998048 44.196965,20.449572 44.625,20.9375 L 64,1.5625 L 62.8125,0 z"/>
+	 <path d="M 32.029256,18.3125 C 24.48866,18.312501 18.343751,24.45741 18.34375,31.998006 C 18.34375,39.538602 24.48866,45.656251 32.029256,45.65625 C 39.569852,45.65625 45.6875,39.538602 45.6875,31.998006 C 45.687499,24.45741 39.569852,18.312499 32.029256,18.3125 z M 32.029256,20.384409 C 38.462046,20.384408 43.615591,25.565216 43.615591,31.998006 C 43.61559,38.430795 38.462045,43.611603 32.029256,43.611603 C 25.596467,43.611604 20.388397,38.430795 20.388397,31.998006 C 20.388398,25.565216 25.596466,20.384409 32.029256,20.384409 z"/>
+	 <path d="M 32.083659,23.906089 C 28.929693,23.877669 25.908965,25.706001 24.575286,28.779211 C 22.797047,32.876825 24.681525,37.646547 28.779138,39.424786 C 32.876752,41.203025 37.646475,39.318547 39.424714,35.220934 C 41.202953,31.12332 39.318475,26.353598 35.220862,24.575359 C 34.196458,24.130799 33.134981,23.915561 32.083659,23.906089 z M 33.568601,27.377927 C 33.699032,27.376429 33.816763,27.388122 33.945066,27.440671 C 34.198256,27.5443 34.409316,27.750898 34.509762,28.005367 C 34.61021,28.259836 34.602992,28.5515 34.488848,28.800125 L 33.317625,31.477205 L 36.01562,32.648428 C 36.349778,32.787861 36.579205,33.104575 36.622146,33.4641 C 36.665083,33.823625 36.495772,34.170139 36.203852,34.384347 C 35.91193,34.598554 35.530027,34.637746 35.199947,34.48892 L 32.522867,33.317698 L 31.351645,36.015692 C 31.212211,36.34985 30.895498,36.579278 30.535972,36.622218 C 30.176445,36.665156 29.829933,36.495844 29.615726,36.203924 C 29.40152,35.912003 29.362327,35.530099 29.511152,35.200019 L 30.682375,32.522939 L 27.98438,31.351717 C 27.464272,31.157483 27.204536,30.59603 27.398769,30.075921 C 27.593002,29.555813 28.175372,29.275162 28.69548,29.469395 C 28.728158,29.481596 28.768821,29.495692 28.800053,29.511225 L 31.477133,30.682447 L 32.648355,27.984452 C 32.805913,27.599507 33.177309,27.382418 33.568601,27.377927 z"/>
+	 <path d="M 19.5625,43.25 L 0,62.8125 L 1.5625,64 L 20.9375,44.625 C 20.449572,44.196965 19.998048,43.73109 19.5625,43.25 z"/>
+	 <path d="M 51.118186,45.613053 C 49.341824,45.597047 47.640503,46.626791 46.889355,48.357671 C 45.887823,50.66551 46.94919,53.351891 49.257029,54.353422 C 51.564868,55.354954 54.25125,54.293587 55.252781,51.985748 C 56.254313,49.677909 55.192946,46.991528 52.885107,45.989996 C 52.308147,45.739613 51.710307,45.618388 51.118186,45.613053 z M 51.954528,47.568446 C 52.027989,47.567602 52.094297,47.574188 52.166559,47.603784 C 52.30916,47.66215 52.428032,47.778509 52.484605,47.92183 C 52.541178,48.065151 52.537113,48.22942 52.472826,48.36945 L 51.813175,49.877222 L 53.332727,50.536873 C 53.52093,50.615404 53.650147,50.793782 53.674332,50.996272 C 53.698515,51.198762 53.603156,51.393924 53.438742,51.514569 C 53.274327,51.635214 53.059234,51.657288 52.873327,51.573467 L 51.365555,50.913816 L 50.705904,52.433368 C 50.627373,52.621571 50.448995,52.750788 50.246505,52.774973 C 50.044014,52.799156 49.848853,52.703797 49.728208,52.539383 C 49.607564,52.374969 49.58549,52.159875 49.66931,51.973969 L 50.328961,50.466196 L 48.809409,49.806546 C 48.516476,49.69715 48.370189,49.380931 48.479584,49.087998 C 48.588979,48.795065 48.916979,48.636998 49.209911,48.746393 C 49.228316,48.753265 49.251218,48.761204 49.268809,48.769952 L 50.776581,49.429602 L 51.436232,47.91005 C 51.524971,47.693243 51.734147,47.570975 51.954528,47.568446 z"/>
+	 <path d="M 12.863352,10.278529 C 11.08699,10.262523 9.385669,11.292267 8.634521,13.023147 C 7.632989,15.330986 8.694356,18.017367 11.002195,19.018898 C 13.310034,20.02043 15.996416,18.959063 16.997947,16.651224 C 17.999479,14.343385 16.938112,11.657004 14.630273,10.655472 C 14.053313,10.405089 13.455473,10.283864 12.863352,10.278529 z M 13.699694,12.233922 C 13.773155,12.233078 13.839463,12.239664 13.911725,12.26926 C 14.054326,12.327626 14.173198,12.443985 14.229771,12.587306 C 14.286344,12.730627 14.282279,12.894896 14.217992,13.034926 L 13.558341,14.542698 L 15.077893,15.202349 C 15.266096,15.28088 15.395313,15.459258 15.419498,15.661748 C 15.443681,15.864238 15.348322,16.0594 15.183908,16.180045 C 15.019493,16.30069 14.8044,16.322764 14.618493,16.238943 L 13.110721,15.579292 L 12.45107,17.098844 C 12.372539,17.287047 12.194161,17.416264 11.991671,17.440449 C 11.78918,17.464632 11.594019,17.369273 11.473374,17.204859 C 11.35273,17.040445 11.330656,16.825351 11.414476,16.639445 L 12.074127,15.131672 L 10.554575,14.472022 C 10.261642,14.362626 10.115355,14.046407 10.22475,13.753474 C 10.334145,13.460541 10.662145,13.302474 10.955077,13.411869 C 10.973482,13.418741 10.996384,13.42668 11.013975,13.435428 L 12.521747,14.095078 L 13.181398,12.575526 C 13.270137,12.358719 13.479313,12.236451 13.699694,12.233922 z"/>
+	</g>
+      </pattern>
+      <pattern id="cardfill" patternUnits="userSpaceOnUse" width="600" height="400">
+        <image xlink:href="white-parchment-paper-texture-600x400.jpg" width="600" height="400" />
+      </pattern>
+      <rect id="ppad"  x="0" y="0" rx="11" ry="11" width="182" height="254" style="fill:none;stroke:white;stroke-width:2;"/>
+	<g id="handx">
+		<g id="kmx">
+			<g id="bpx"><use xlink:href="#ppad"/><use xlink:href="#ppad" x="190"/></g>
+		 <use xlink:href="#ppad" x="380"/><use xlink:href="#ppad" x="570"/><use xlink:href="#ppad" x="760"/></g>
+	 <use xlink:href="#ppad" x="950"/>
+	</g>
+	<rect x="-5" y="-5" width="379" height="264" rx="11" ry="11" id="bbatx"/>
+	<rect x="-5" y="-5" width="1145" height="264" rx="11" ry="11" id="bhandx"/>
+	<rect x="-5" y="-5" width="339" height="339" rx="11" ry="11" id="bsafex"/>
+	<rect x="-5" y="-5" width="955" height="365" rx="11" ry="11" id="bmkx"/>
+
+      <rect id="pcard"  x="0" y="0" rx="11" ry="11" width="182" height="254" style="fill:url(#cardfill);stroke:rgb(0,0,0);stroke-width:2;"/>
+      <path id="pmiles" d="M 24 215 H 157 V 75 C 131.60085,26.645824 53.999863,25.168114 24,75 Z"/>
+      <path id="p0" d="M 123.52981,105.59637 C 115.72654,105.59637 109.46731,111.88465 109.46731,119.69012 L 109.46731,144.22137 C 109.46731,152.02683 115.72654,158.28387 123.52981,158.28387 L 133.34231,158.28387 C 141.14557,158.28387 147.43604,152.02684 147.43605,144.22137 L 147.43605,119.69012 C 147.43605,111.88466 141.14557,105.59637 133.34231,105.59637 L 123.52981,105.59637 z M 128.34231,116.50262 C 130.3558,116.50262 131.99856,118.50165 131.99856,120.97137 L 131.99856,143.28387 C 131.99856,145.75359 130.3558,147.75262 128.34231,147.75262 C 126.32882,147.75261 124.71731,145.75359 124.71731,143.28387 L 124.71731,120.97137 C 124.71731,118.50165 126.32882,116.50262 128.34231,116.50262 Z"/>
+      <path id="p1" d="M 44.496885,106.46045 L 62.372801,106.46045 L 62.501405,146.45621 L 63.658839,147.61364 L 63.658839,157.38752 L 44.496885,157.38752 L 44.496885,148.51386 L 46.554545,146.45621 L 46.554545,119.06361 C 46.320012,117.82044 46.257935,116.57728 44.368281,115.33411 L 44.496885,106.46045 Z" />
+      <path id="p2" d="M 57.566416,124.76415 L 57.449411,110.95758 C 62.16069,107.00891 69.052749,105.67718 76.872226,105.45835 C 93.688455,106.27477 94.554882,113.47112 94.539968,121.02 C 95.403214,141.78959 71.925347,135.99803 72.075025,146.76108 C 75.778979,146.71585 79.766716,146.98988 78.6273,141.49586 L 93.603929,141.72987 L 93.486924,157.52553 L 56.513372,157.52553 L 56.630377,142.5489 C 57.561281,127.9862 80.815191,127.60159 78.510295,120.66898 C 78.884616,117.47988 77.587745,117.00777 75.819182,116.57381 C 70.936171,117.60122 73.514185,121.82622 72.543045,124.53015 L 57.566416,124.76415 Z"/>
+      <path id="p5" d="M 96.76613,106.053 L 132.73079,106.053 L 132.73079,119.8113 L 117.76563,119.89175 C 116.91581,115.87468 114.14454,116.66125 111.65083,116.7539 L 111.73129,123.02961 C 129.94695,117.57678 133.93926,128.52862 133.8572,139.36256 C 134.32781,153.6823 126.4535,157.57088 115.83464,158.02878 C 107.8413,157.92643 101.54136,155.90489 96.76613,152.15535 L 96.685673,137.91431 L 111.8922,137.91431 C 111.65441,142.64817 111.87145,146.37714 114.70823,146.92559 C 116.74363,146.68041 117.69265,146.16105 117.92654,139.52347 C 117.71418,134.41416 116.61431,131.67152 114.77062,131.88157 C 113.38186,132.03979 112.02704,132.57739 111.89221,134.05234 L 96.76613,133.89142 L 96.76613,106.053 Z"/>
+      <path id="p7" d="M 58.508349,106.24119 L 94.441558,106.37477 L 94.575139,115.45826 L 79.480519,156.60111 L 62.649351,156.60111 L 77.61039,116.66048 C 73.272194,116.06466 70.611401,118.26451 71.599258,126.54545 L 58.508349,126.54545 L 58.508349,106.24119 Z" class="p" />
+     <g id="p25" class="miles">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">25</text>
+      <use xlink:href="#pmiles" style="fill:none;stroke:rgb(24,117,52);"/>
+      <use xlink:href="#p2" style="stroke:none;fill:rgb(239,31,29);"/>
+      <use xlink:href="#p5" style="stroke:none;fill:rgb(239,31,29);"/>
+     </g>
+     <g id="p50" class="miles">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">50</text>
+      <use xlink:href="#pmiles" style="fill:none;stroke:rgb(70,24,198);"/>
+      <use xlink:href="#p5" transform="translate(-39,0)" style="stroke:none;fill:rgb(239,31,29);"/>
+      <use xlink:href="#p0" transform="translate(-13,0)" style="stroke:none;fill:rgb(239,31,29);"/>
+     </g>
+     <g id="p75" class="miles">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">75</text>
+      <use xlink:href="#pmiles" style="fill:none;stroke:rgb(239,31,29);"/>
+      <use xlink:href="#p7" style="stroke:none;fill:rgb(24,117,52);"/>
+      <use xlink:href="#p5" style="stroke:none;fill:rgb(24,117,52);"/>
+     </g>
+     <g id="p100" class="miles">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">100</text>
+      <use xlink:href="#pmiles" style="fill:none;stroke:rgb(70,24,198);"/>
+      <use xlink:href="#p1" style="stroke:none;fill:rgb(24,117,52);"/>
+      <use xlink:href="#p0" style="stroke:none;fill:rgb(24,117,52);"/>
+      <use xlink:href="#p0" transform="translate(-39,0)" style="stroke:none;fill:rgb(24,117,52);"/>
+     </g>
+     <g id="p200" class="miles">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">200</text>
+      <use xlink:href="#pmiles" style="fill:none;stroke:rgb(24,117,52);"/>
+      <use xlink:href="#p2" transform="translate(-26,0)" style="stroke:none;fill:rgb(70,24,198);"/>
+      <use xlink:href="#p0" style="stroke:none;fill:rgb(70,24,198);"/>
+      <use xlink:href="#p0" transform="translate(-39,0)" style="stroke:none;fill:rgb(70,24,198);"/>
+     </g>
+     <g id="pscrash" class="safety">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Driving Ace</text>
+       <circle cx="96" cy="133" r="65.5" style="stroke-width:12;stroke:rgb(70,24,198);fill:none;" />
+       <rect x="66" y="112" width="60" height="42" rx="5" ry="5" class="k" />
+       <rect x="77" y="116" width="38" height="32" rx="3" ry="3" style="fill: rgb(70,24,198)" />
+       <polygon points="84,120 39,100 36,104 82,133" style="fill: rgb(70,24,198)" />
+       <polygon points="107,121 111,132 155,104 152,100" style="fill: rgb(70,24,198)" />
+     </g>
+     <g id="psgo" class="safety">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Right of Way</text>
+       <line x1="25" y1="80" x2="68" y2="96" style="stroke: rgb(70,24,198); stroke-width: 2" />
+       <line x1="25" y1="107" x2="68" y2="107" style="stroke: rgb(70,24,198); stroke-width: 2" />
+       <line x1="25" y1="134" x2="68" y2="118" style="stroke: rgb(70,24,198); stroke-width: 2" />
+       <line x1="123" y1="96" x2="166" y2="80" style="stroke: rgb(70,24,198); stroke-width: 2" />
+       <line x1="123" y1="107" x2="166" y2="107" style="stroke: rgb(70,24,198); stroke-width: 2" />
+       <line x1="123" y1="118" x2="166" y2="134" style="stroke: rgb(70,24,198); stroke-width: 2" />
+       <path d="M 30 144 Q 95.5 136 161 144 L 160 154 Q 95.5 147 31 154 Z" class="k" />
+       <path d="M 74 79 Q 95.5 70 117 79 L 106 95 Q 95.5 90 85 95 V 127 H 106 V 95 L 117 79 V 144 H 74 Z" style="fill: rgb(70,24,198)" />
+     </g>
+     <g id="psfuel" class="safety">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Extra Tank</text>
+       <path d="M 40,94 H 152 A 34 34 0 0 1 152,151 H 40 A 34 34 0 0 1 40,94 Z" style="fill:rgb(70,24,198);"/>
+       <rect x="82" y="85.5" width="28" height="5" style="fill: rgb(70,24,198)" />
+       <circle cx="63" cy="165" r="10" class="k" />
+       <circle cx="129" cy="165" r="10" class="k" />
+     </g>
+     <g id="pstire" class="safety">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Puncture Proof</text>
+       <circle cx="96" cy="132" r="54" style="fill: rgb(220,220,130);stroke:rgb(70,24,198);stroke-width:36"/>
+
+       <!-- black dots center, 1-5 -->
+      <g class="k">
+       <circle cx="96"  cy="132" r="9"/>
+       <circle cx="86"  cy="113" r="3"/>
+       <circle cx="110" cy="117" r="3"/>
+       <circle cx="75"  cy="135" r="3"/>
+       <circle cx="92"  cy="152" r="3"/>
+       <circle cx="114" cy="141" r="3"/>
+
+       <path d="M 22.5,225.5 L 168.5,225.5 168.5,228.5 22.5,228.5 Z"/>
+       <path d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z" />
+       <path transform="translate(15,0)"  d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+       <path transform="translate(30,0)"  d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+       <path transform="translate(45,0)"  d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+       <path transform="translate(60,0)"  d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+       <path transform="translate(75,0)"  d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+       <path transform="translate(90,0)"  d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+       <path transform="translate(105,0)" d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+       <path transform="translate(120,0)" d="M 34.5,228.5 L 37.5,228.5 37.5,217 40,217 36,208 32,217 34.5,217 Z"/>
+      </g>
+     </g>
+     <g id="phgo" class="hazard">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Stop</text>
+       <circle cx="96" cy="59" r="32" style="fill: rgb(239,31,29)" />
+       <circle cx="96" cy="132" r="32" style="fill: rgb(178,178,178)" />
+       <circle cx="96" cy="205" r="32" style="fill: rgb(178,178,178)" />
+     </g>
+     <g id="prgo" class="remedy">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Go</text>
+       <circle cx="96" cy="59" r="32" style="fill: rgb(178,178,178)" />
+       <circle cx="96" cy="132" r="32" style="fill: rgb(178,178,178)" />
+       <circle cx="96" cy="205" r="32" class="p" />
+     </g>
+     <g id="plimit" class="hazard">
+       <use xlink:href="#pcard"/>
+      <text x="10" y="20">Speed Limit</text>
+       <circle cx="96" cy="132" r="65" style="fill:none;stroke:rgb(239,31,29);stroke-width:14;" />
+       <use xlink:href="#p5" transform="translate(-39,0)" class="k"/>
+       <use xlink:href="#p0" transform="translate(-13,0)" class="k"/>
+     </g>
+     <g id="punlimit" class="remedy">
+       <use xlink:href="#pcard"/>
+      <text x="10" y="20">End of Limit</text>
+       <circle cx="96" cy="132" r="65" style="fill:none;stroke:rgb(24,117,52);stroke-width:14;" />
+       <use xlink:href="#p5" transform="translate(-39,0)" style="fill:rgb(178,178,178)"/>
+       <use xlink:href="#p0" transform="translate(-13,0)" style="fill:rgb(178,178,178)"/>
+     </g>
+     <g id="phtire" class="hazard">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Flat Tire</text>
+       <path d="M 28.23,198 A 72 72 0 1 1 165.77,198 Z" style="fill:rgb(239,31,29)"/><!-- <=== FIXME -->
+       <circle cx="96" cy="159" r="36" style="fill:rgb(220,220,130)" />
+
+       <circle cx="96" cy="159" r="36" style="fill: rgb(220,220,130)" />
+       <circle cx="96" cy="159" r="9" class="k" />
+       <circle cx="86" cy="140" r="3" class="k" />
+       <circle cx="110" cy="144" r="3" class="k" />
+       <circle cx="75" cy="162" r="3" class="k" />
+       <circle cx="92" cy="179" r="3" class="k" />
+       <circle cx="114" cy="168" r="3" class="k" />
+       <polygon points="66,190 131,188 131,196 66,196" style="fill: rgb(239,31,29)" />
+       <polygon points="54,189 48,207 52,205 52,226 56,226 56,205 60,207" class="k" />
+
+     </g>
+     <g id="prtire" class="remedy">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Patch Tire</text>
+       <circle cx="96" cy="132" r="54" style="fill: rgb(220,220,130);stroke:rgb(24,117,52);stroke-width:36"/>
+       <circle cx="96" cy="132" r="9" class="k" />
+       <circle cx="86" cy="113" r="3" class="k" />
+       <circle cx="110" cy="117" r="3" class="k" />
+       <circle cx="75" cy="135" r="3" class="k" />
+       <circle cx="92" cy="152" r="3" class="k" />
+       <circle cx="114" cy="141" r="3" class="k" />
+
+     </g>
+     <g id="phfuel" class="hazard">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Out of Gas</text>
+       <path d="M 26 70 H 46 V 79 H 39 Q 40 75 36 75 V 81 H 41 V 86 H 36 V 92 Q 40 92 39 88 H 46 V 97 H 26 V 93 H 27 V 75 H 26 Z" style="fill: rgb(239,31,29)" />
+       <path d="M 144 70 H 164 V 79 H 157 Q 158 75 154 75 V 81 H 159 V 86 H 154 V 93 H 155 V 97 H 144 V 93 H 145 V 75 H 144 Z" style="fill: rgb(239,31,29)" />
+       <path d="M 24 118 Q 96 69 168 118 L 163 126 Q 96 79 29 126 Z" class="k" />
+       <polygon points="49,114 52,136 57,133 93,193 97.5,190 62,131 66.5,128" style="fill: rgb(239,31,29)" />
+     </g>
+     <g id="prfuel" class="remedy">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Gasoline</text>
+       <polygon points="42,61 97,61 149,83 149,204 42,204" class="p" />
+       <polygon points="124,54 120,64 142,74 146,64" class="p" />
+       <circle cx="68" cy="84" r="6" class="k" />
+       <rect x="62" y="84" width="12" height="96" class="k" />
+       <circle cx="68" cy="180" r="6" class="k" />
+       <circle cx="96" cy="84" r="6" class="k" />
+       <rect x="90" y="84" width="12" height="96" class="k" />
+       <circle cx="96" cy="180" r="6" class="k" />
+       <circle cx="124" cy="92" r="6" class="k" />
+       <rect x="118" y="92" width="12" height="88" class="k" />
+       <circle cx="124" cy="180" r="6" class="k" />
+     </g>
+     <g id="phcrash" class="hazard">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Accident</text>
+       <path d="M 84 167 H 107 L 126 62 Q 126 35 96 35 Q 66 35 65 62 Z" style="fill: rgb(239,31,29)" />
+       <circle cx="96" cy="204" r="25" style="fill: rgb(239,31,29)" />
+       <polygon points="26,205 90,91 105,115 164,58 101,171 85,148" style="fill: rgb(255,255,165); stroke-width: 3; stroke: rgb(0,0,0)" />
+     </g>
+     <g id="prcrash" class="remedy">
+      <use xlink:href="#pcard"/>
+      <text x="10" y="20">Repairs</text>
+       <path d="M 96,124.5 L 133.96,101.5 133.96,30 A 63 63 0 1 1 58.04,30 L 58.04,101.5 Z" class="p"/>
+       <rect x="69" y="139" width="54" height="93" class="p" />
+       <!-- <polygon points="73,52 73,79 96,93 119,79 119,52 96,38" class="k"/> -->
+       <!--  <polygon points="73-23/2,52+14/2 73-23/2,79+41/2 96,93+55/2 119+23/2,79+41/2 119+23/2,52+14/2 96,38" class="k"/> -->
+       <polygon points="61.5,59 61.5,99.5 96,120.5 130.5,99.5 130.5,59 96,38" class="k"/>
+     </g>
+
+    <g id="vici" x="-10" y="-10">
+      <rect x="0" y="0" width="1555" height="704" rx="11" ry="11" fill="rgba(32,32,127,0.4)"/>
+      <g transform="translate(600,330)" onclick="tryextend()">	<rect fill="#dfdf48" x="0" y="0" width="180" height="30" rx="11" ry="11" /><text x="30" y="20">Extension</text></g>
+      <g transform="translate(600,370)" onclick="doscore()">	<rect fill="#dfdf48" x="0" y="0" width="180" height="30" rx="11" ry="11" /><text x="30" y="20">Next Hand</text></g>
+    </g>
+    </defs>
+    <g id="hide" opacity="0">
+    </g>
+    <rect x="0" y="0" width="100%" height="100%" style="fill:url(#felt);stroke:none;"/>
+<g transform="scale(0.6)" id="hub">
+    <g id="dump" transform="translate(1600,50)" onclick="prepdiscard()">
+      <rect x="-5" y="-45" rx="11" ry="11" width="195" height="1400" style="fill:yellow;opacity:0.2"/>
+      <rect x="0" y="-40" rx="11" ry="11" width="185" height="30" style="fill:green;"/>
+      <text x="10" y="-20">X to enable Discard</text>
+      <g id="distex" style="opacity:0"><rect x="0" y="-40" rx="11" ry="11" width="185" height="30" style="fill:red;"/>
+      <text x="10" y="-20" >X card to Discard</text></g>
+      <use xlink:href="#ppad"/>
+    </g>
+  </g>
+</svg>
