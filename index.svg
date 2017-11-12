@@ -1,5 +1,5 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onload="inot(evt)">
-  <script type="text/ecmascript" xlink:href="/jqml/src/jqmlns.js"></script>
+  <script type="text/ecmascript" xlink:href="jqmlns.js"></script>
   <script type="text/ecmascript" xlink:href="mille.js"></script>
   <script type="text/ecmascript" xlink:href="mbfunc1.js"></script>
   <script type="text/ecmascript" xlink:href="mbui.js"></script>
